@@ -4,6 +4,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:untitled/class_5/list.dart';
 
 class Class3HomePage extends StatefulWidget {
   const Class3HomePage({Key? key}) : super(key: key);
@@ -279,6 +280,10 @@ class _Class3HomePageState extends State<Class3HomePage> {
 
               ],
             ),
+            
+            ElevatedButton(onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>ListViewAndGridView()));
+            }, child: Text("Go to Next Page"))
           ],
         ),
       ),
