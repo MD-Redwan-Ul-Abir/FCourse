@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:untitled/class_5/student_detaills.dart';
+import 'package:untitled/class_6/flexiable.dart';
 
 import '../model/my_student.dart';
 
@@ -126,7 +127,10 @@ class _ListViewAndGridViewState extends State<ListViewAndGridView> {
           setState(() {
             isListView? isListView=false:isListView=true;
           });
-          }, icon: Icon(isListView?Icons.grid_view:Icons.list_alt),iconSize: 30,)
+          }, icon: Icon(isListView?Icons.grid_view:Icons.list_alt),iconSize: 30,),
+          IconButton(onPressed: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>MyStatefulWidget()));
+          }, icon: Icon(Icons.add))
         ],
       ),
 

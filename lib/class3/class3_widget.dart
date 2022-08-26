@@ -75,7 +75,7 @@ class _Class3HomePageState extends State<Class3HomePage> {
                   GestureDetector(
                     child: Row(
                       children: [
-                        Icon(Icons.browse_gallery),
+                        Icon(Icons.open_in_browser),
                         Padding(padding: EdgeInsets.only(left: 6)),
                         Text('Images')
                       ],
