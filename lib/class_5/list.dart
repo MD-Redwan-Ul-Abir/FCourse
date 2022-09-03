@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:untitled/class_5/student_detaills.dart';
 import 'package:untitled/class_6/flexiable.dart';
+import 'package:untitled/providers/product_provider.dart';
 import 'package:untitled/providers/student_prodvider.dart';
 
 class ListViewAndGridView extends StatefulWidget {
@@ -14,6 +15,14 @@ class ListViewAndGridView extends StatefulWidget {
 
 class _ListViewAndGridViewState extends State<ListViewAndGridView> {
   bool isListView = true;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    Provider.of<ProductProvider>(context, listen: false).getProductData();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     final studentData = Provider.of<StudentProvider>(context);

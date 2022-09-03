@@ -1,23 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:untitled/class3/class3_widget.dart';
+import 'package:untitled/class_8/product_view.dart';
+import 'package:untitled/providers/product_provider.dart';
 import 'package:untitled/providers/student_prodvider.dart';
 
+import 'api_service.dart';
 import 'class_5/list.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
+  MyApp({Key? key}) : super(key: key);
   // This widget is the root of your application.
+  final APIServiceClass api = APIServiceClass();
+
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => StudentProvider()),
+        ChangeNotifierProvider(create: (_) => ProductProvider(api)),
       ],
       child: MaterialApp(
         title: 'Flutter Demo',
@@ -33,7 +37,7 @@ class MyApp extends StatelessWidget {
           // is not restarted.
           primarySwatch: Colors.blue,
         ),
-        home: const ListViewAndGridView(),
+        home: const ProductView(),
       ),
     );
   }

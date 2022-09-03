@@ -142,22 +142,29 @@ class StudentProvider extends ChangeNotifier {
     String studentFatherName = '',
     String studentMotherName = '',
     String address = '',
-    String type = '',
     bool active = true,
     String profileImage =
         "https://emojigraph.org/media/apple/man-student-medium-light-skin-tone_1f468-1f3fc-200d-1f393.png",
   }) async {
     for (var element in myStudentList) {
       if (element.id == id) {
-        StudentModel(
-            studentId: studentId,
-            studentName: studentName,
-            type: studentType,
-            address: address,
-            studentFname: studentFatherName,
-            studentMname: studentMotherName,
-            active: active,
-            profileImage: profileImage);
+        element.studentId = studentId;
+        element.studentName = studentName;
+        element.active = active;
+        element.address = address;
+        element.profileImage = profileImage;
+        element.type = studentType;
+        element.studentFname = studentFatherName;
+        element.studentMname = studentMotherName;
+        // StudentModel(
+        //     studentId: studentId,
+        //     studentName: studentName,
+        //     type: studentType,
+        //     address: address,
+        //     studentFname: studentFatherName,
+        //     studentMname: studentMotherName,
+        //     active: active,
+        //     profileImage: profileImage);
       }
     }
 
